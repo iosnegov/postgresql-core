@@ -1,20 +1,24 @@
 [workspace]
-authors = ["Sierra Arn"]
-channels = ["conda-forge"]
+authors = ["Ilya Snegov <unweariedheart@gmail.com>"]
 name = "postgresql-core"
-platforms = ["linux-64"]
 version = "0.2.1"
+license = "MIT-0"
+repository = "https://github.com/snegoviol/postgresql-core"
+
+channels = ["https://prefix.dev/conda-forge"]
+platforms = ["linux-64"]
+requires-pixi = ">=0.82.0"
 
 [tasks]
 
 [dependencies]
-python = "*"
-pydantic-settings = "*"
-sqlalchemy = "*"
-alembic = "*"
-psycopg2-binary = "*"
-asyncpg = "*"
-just = "*"
+python = ">=3.14.8,<3.15"
+pydantic-settings = ">=2.16.0,<3"
+sqlalchemy = ">=2.1.5,<3"
+alembic = ">=1.20.0,<2"
+psycopg2-binary = ">=2.9.12,<3"
+asyncpg = ">=0.31.0,<0.32"
+just = ">=1.59.0,<2"
 
 [feature.test.dependencies]
 jupyterlab = "*"

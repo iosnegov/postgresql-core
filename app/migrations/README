@@ -1,10 +1,10 @@
-# **Generic single-database configuration**
+# Generic single-database configuration
 
 - This is a generic single-database configuration for Alembic migrations.
 - No modifications have been made to `alembic.ini` or `script.py.mako` files. 
 - All customizations for this project are implemented in `env.py`.
 
-## **Important Note**
+## Important Note
 
 While SQLAlchemy can automatically create an `ENUM` type (e.g., `device_type`) when defining a column, Alembic’s autogenerate feature does not detect `ENUM` types independently and does not generate proper `downgrade()` logic for them.
 

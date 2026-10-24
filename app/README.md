@@ -1,8 +1,8 @@
-# **Application Structure**
+# Application Structure
 
 *This README provides a high-level architectural overview of the project: what each component is for and why it exists. For implementation details refer to the docstrings and comments inside each file.*
 
-## **I. `db/` — The Database Layer**
+## I. `db/` — The Database Layer
 
 1. **`config.py`**  
    Defines configuration schemas for PostgreSQL using Pydantic Settings, loaded from `.env` with `POSTGRESQL_` prefix.
@@ -22,7 +22,7 @@
 6. **`async_db/`**  
    Asynchronous data access layer.
 
-## **II. `sync_db/` and `async_db/` — Dual Data Access Layers**
+## II. `sync_db/` and `async_db/` — Dual Data Access Layers
 
 These directories provide **symmetrical implementations** of the same data access patterns — one for synchronous execution (`sync_db/`), and the other for asynchronous (`async_db/`). Both follow identical architectural boundaries but differ only in I/O model, enabling consistent logic across blocking and non-blocking contexts.
 
@@ -64,6 +64,6 @@ These directories provide **symmetrical implementations** of the same data acces
    
    This is also reflected in the schema design: Pydantic models are defined **only for create and update operations**, as read, delete, and filtering require no structured input.
 
-## **III. `migrations/`**
+## III. `migrations/`
 
 Alembic directory that manages database schema changes and table modifications. Contains migration files, configuration, and version control for database structure evolution.
